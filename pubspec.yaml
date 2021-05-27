@@ -13,9 +13,8 @@ dependencies:
   flutter_localizations: # Add this line
     sdk: flutter         # Add this line
   cupertino_icons: ^1.0.2
-  # hive: ^2.0.4
-  # Hive DataBase
   intl: ^0.17.0
+    # Hive DataBase
   hive: ^2.0.4
   hive_flutter: ^1.0.0
   twilio_phone_verify: ^0.0.2

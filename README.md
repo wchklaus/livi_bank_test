@@ -1,52 +1,28 @@
 # livi_bank_test
 
-A new Flutter project.
+Simple Flutter project.
+  - DataBase - Hive (NO SQL DataBase)
+  - Stage Management - Provider, StatefulBuilder, setState
+  - Does not connect with any API
 
-## Getting Started
+## This Project Used to show the Ideas behind of Behavior Driven Development (BDD)
 
-This project is a starting point for a Flutter application.
+Take a look of the file called phone_notifier.dart (path: lib/home/util/phone_notifier.dart)
 
-A few resources to get you started if this is your first Flutter project:
+// Go Through the function call changePhoneNum(), which used to asynchronously update the change of the phone number in the TextField Widget
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Background: 
+  - Given that "the Country_Code, Country_Name and the Corresponding Phone_Prefix in the corresponding country are valid"
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-
-
-Tasks:
-- There will be a selection box which allows customers to choose which area code they are in. E.g. Hong Kong should be +852. You may want to find the corresponding flags.
+Action:
+  - Verify the User Input Mobile Phone Number whether valid or not through matching the user input value comparison with a valid pattern of the mobile phone with the corresponding length of the mobile phone
 
 
-// Define is the 
-- To ease the customers, we may want to pre-select +852 to save customers time. (Or potentially replaceable with an API where we can detect the customer's location to find the most close match. API part is not needed here, just to leave a room for future enhancement)
+Assetion:
+  - If the length of the input values matching with the length of the phone, it would consider that it is a phone structure. However, we wanna verify whether this is a valid phone mobile that why we need to consider the corresponding country mobile pattern in their phone structure.
 
-- Area code should allow keyboard typing for quick navigation or alternatively scroll down the list
+Consider the HK as an example:
+  - We knew that HK phone number at least is 8 digital, only the number exactly equal to 8 digital we would assume it is an HK phone number, and the country prefix starting with +852. If you wanna verify is it a mobile phone number we would check with the first digital phone number. If the first number is equal to one of the below set it is a valid mobile phone 
+  set  = {'4', '5', '6', '7', '8', '9'};
 
-
-flutter clean
-flutter pub cache repair
-flutter pub run build_runner clean
-flutter pub run build_runner build
-
-
-# About ----- $ flutter packages pub run build_runner build
-  analyzer:
-    dependency: transitive
-    description:
-      name: analyzer
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.5.0"
-
-# About ---- reset the Hive
-- Delete the adapters created
-- run flutter clean
-- delete the app from the emulator
-- create the new adapters with flutter packages pub run build_runner build
-
-
-
-Your mobile application should be written in Flutter which can be rendered on Android and IOS devices
+About the details implementation please refer to the function called changePhoneNum(), which from inside phone_notifier.dart (path: lib/home/util/phone_notifier.dart)

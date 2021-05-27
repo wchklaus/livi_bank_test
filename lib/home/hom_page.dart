@@ -172,39 +172,17 @@ class _HomePage extends State<HomePage> {
                           alignment: Alignment.center,
                           child: GestureDetector(
                             onTap: () async {
-                              TwilioPhoneVerify _twilioPhoneVerify;
-                              _twilioPhoneVerify = new TwilioPhoneVerify(
-                                  accountSid:
-                                      'AC94aa85bc82e708d5d6c916a37a1c2dd6', // replace with Account SID
-                                  authToken:
-                                      '682ba56458836018d4b90f7657233f29', // replace with Auth Token
-                                  serviceSid:
-                                      'IS6f67dfcd2f9d4dcb9e831f1a86277a36' // replace with Service SID
-                                  );
-                              // print(PhoneNotifier().countryCode.dialCode! +
-                              //     PhoneNotifier().phoneNum.value!);
-                              var result = await _twilioPhoneVerify.sendSmsCode(
-                                  PhoneNotifier().countryCode.dialCode! +
-                                      PhoneNotifier().phoneNum.value!);
-                              if (result['message'] == 'success') {
-                                print(result.toString());
-                                // code sent
-                              } else {
-                                // error
-                                print(
-                                    '${result['statusCode']} : ${result['message']}');
+                              await ValidationManager.addValidation();
+                              if (PhoneNotifier().isValid) {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return ValidationPage();
+                                    },
+                                  ),
+                                );
                               }
-                              // await ValidationManager.addValidation();
-                              // if (PhoneNotifier().isValid) {
-                              //   Navigator.push(
-                              //     context,
-                              //     MaterialPageRoute(
-                              //       builder: (context) {
-                              //         return ValidationPage();
-                              //       },
-                              //     ),
-                              //   );
-                              // }
                             },
                             child: Container(
                               decoration: BoxDecoration(

@@ -32,7 +32,6 @@ class PhoneNotifier extends ChangeNotifier {
 
   // Setters
   void changePhoneNum(String value) {
-    print(countryCode.dialCode);
     if (Country.codeToCountryMap.containsKey(countryCode.dialCode)) {
       final country = Country.codeToCountryMap[countryCode.dialCode];
       String? mobilePrefix;
@@ -45,7 +44,6 @@ class PhoneNotifier extends ChangeNotifier {
       });
       RegExp regEXp = RegExp("^[$mobilePrefix]");
       bool isValidPhoneNum = regEXp.hasMatch(value);
-      print(isValidPhoneNum);
       if (value.length == 8 && isValidPhoneNum) {
         _phoneNum = ValidationItem(value, null);
       } else {
