@@ -1,7 +1,7 @@
 # livi_bank_test
 
 Simple Flutter project.
-  - DataBase - Hive (NO SQL DataBase)
+  - DataBase - [Hive](https://pub.dev/packages/hive) (NO SQL DataBase)
   - Stage Management - Provider, StatefulBuilder, setState
   - Does not connect with any API
 
