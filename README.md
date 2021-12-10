@@ -11,6 +11,11 @@ Take a look of the file called [phone_notifier.dart](https://github.com/Klaus-Wo
 
 // Go Through the function call changePhoneNum(), which used to asynchronously update the change of the phone number in the TextField Widget
 
+## Android Demo:
+
+https://github.com/Klaus-Wong/livi_bank_test/blob/master/anroid_test.mp4
+
+
 #### Background: 
   - Given that "the Country_Code, Country_Name and the Corresponding Phone_Prefix in the corresponding country are valid"
 
@@ -25,3 +30,5 @@ Take a look of the file called [phone_notifier.dart](https://github.com/Klaus-Wo
   set  = {'4', '5', '6', '7', '8', '9'};
 
 About the details implementation please refer to the function called changePhoneNum(), which from inside [phone_notifier.dart](https://github.com/Klaus-Wong/livi_bank_test/blob/master/lib/home/util/phone_notifier.dart)
+
+
