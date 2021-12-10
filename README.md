@@ -13,8 +13,7 @@ Take a look of the file called [phone_notifier.dart](https://github.com/Klaus-Wo
 
 ## Android Demo:
 
-https://github.com/Klaus-Wong/livi_bank_test/blob/master/anroid_test.mp4
-
+![](anroid_test.gif)
 
 #### Background: 
   - Given that "the Country_Code, Country_Name and the Corresponding Phone_Prefix in the corresponding country are valid"
